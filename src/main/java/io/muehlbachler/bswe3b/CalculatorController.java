@@ -11,7 +11,7 @@ public class CalculatorController {
     private CalculatorService calculator = new CalculatorService();
 
     @GetMapping("/divide")
-    int divide(@RequestParam(value = "a") final int a, @RequestParam(value = "b") final int b) {
+    double divide(@RequestParam(value = "a") final int a, @RequestParam(value = "b") final int b) {
         return calculator.divide(a, b);
     }
 }
