@@ -15,13 +15,17 @@ public class CalculatorService {
      * @return The result of dividing the dividend by the divisor as a double.
      *         If either the dividend or divisor is negative, the result will be 0.
      */
-    public double divide(final int a, final int b) {
-        double result = 0;
-        if(b < 0) {
+    public int divide(final int a, final int b) {
+        int result = 0;
+        if(b <= 0) {
             result = 0;
         } else {
             result = a/b;
         }
         return result;
+    }
+
+    public int multiply(final int a, final int b) {
+        return a * b;
     }
 }

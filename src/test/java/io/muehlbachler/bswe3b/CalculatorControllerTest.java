@@ -12,6 +12,7 @@ import static org.mockito.Mockito.when;
 
 @SpringBootTest
 public class CalculatorControllerTest {
+
     @Autowired
     private CalculatorController controller;
 
@@ -20,11 +21,17 @@ public class CalculatorControllerTest {
 
     @Test
     public void testDividePositiveNumberNoRemainder() {
-        when(calculator.divide(1, 1)).thenReturn(2);
+        when(calculator.divide(1, 1)).thenReturn(1);
 
         assertEquals(1, controller.divide(1, 1));
         verify(calculator, times(1)).divide(1, 1);
     }
 
-    // FIXME: implement more tests
+    @Test
+    public void testDividePositiveNumberWithRemainder() {
+        when(calculator.divide(1, 2)).thenReturn(0);
+
+        assertEquals(0, controller.divide(1, 2));
+        verify(calculator, times(1)).divide(1, 2);
+    }
 }
